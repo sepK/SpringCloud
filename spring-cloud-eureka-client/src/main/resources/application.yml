@@ -1,0 +1,38 @@
+spring:
+  profiles: first
+  application:
+    name: eureka-client01
+server:
+  port: 8080
+eureka:
+  client:
+    service-url:
+      defaultZone: http://kongTao:123456@localhost:8761/eureka/,http://kongTao:123456@localhost:8762/eureka/
+  instance:
+    instanceId: ${spring.application.name}
+---
+spring:
+  profiles: second
+  application:
+    name: eureka-client02
+server:
+  port: 8081
+eureka:
+  client:
+    service-url:
+      defaultZone: http://kongTao:123456@localhost:8761/eureka/,http://kongTao:123456@localhost:8762/eureka/
+  instance:
+    instanceId: ${spring.application.name}
+---
+spring:
+  profiles: third
+  application:
+    name: eureka-client03
+server:
+  port: 8082
+eureka:
+  client:
+    service-url:
+      defaultZone: http://kongTao:123456@localhost:8761/eureka/,http://kongTao:123456@localhost:8762/eureka/
+  instance:
+    instanceId: ${spring.application.name}
